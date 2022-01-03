@@ -19,3 +19,16 @@
 // 1
 
 // Resulting in 9 steps. So for input n = 12, the return value would be 9.
+function collatz(int) {
+  let result = 0;
+  while (int !== 1) {
+    if (int % 2 === 0) {
+      int = int / 2;
+    } else {
+      int = int * 3 + 1;
+    }
+    result++;
+  }
+  return result;
+}
+console.log(collatz(12));
