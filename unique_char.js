@@ -28,12 +28,13 @@
 // var unique = str[0]
 function uniqueLetter(str) {
   let letters = str.split("");
+  let unique;
   for (let i = 0; i < letters.length; i++) {
-    let unique = true;
+    unique = true;
     for (let j = i + 1; j < letters.length; j++) {
       if (letters[i] === letters[j]) {
         unique = false;
-        // break;
+        break;
       }
     }
     if (unique === true) {
@@ -45,4 +46,4 @@ function uniqueLetter(str) {
   }
   console.log(letters);
 }
-console.log(uniqueLetter("loveleet"));
+console.log(uniqueLetter("lloobb"));
