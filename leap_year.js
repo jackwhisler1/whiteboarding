@@ -25,3 +25,4 @@ console.log(leapYear(1997)); // false
 console.log(leapYear(1996)); // true
 console.log(leapYear(1900)); // false
 console.log(leapYear(2000)); // true
+console.log(leapYear(2001)); // true
