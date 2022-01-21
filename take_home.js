@@ -1,38 +1,31 @@
 function solution(A) {
-  // write your code in JavaScript (Node.js 8.9.4)
-  // heads first combination
-  // consider heads = 0 and tails = 1
-  let changeOdds = 0;
-  let changeEvens = 0;
-  let T = A; // create duplicate array to test
+  let oddsHeads = 0;
+  let evensHeads = 0;
+
   for (let i = 0; i < A.length; i++) {
-    if (A[i] !== A[i + 1] && A[0] === 0) {
-    } else {
-      // if coin is tails, make next coin heads. otherwise make next coin tails
-      if (A[i] > 0) {
-        A[i + 1] = 0;
+    // two scenarios, all odds are heads or all evens are heads
+    if (i % 2 === 0) {
+      if (A[i] === 0) {
+        oddsHeads++;
       } else {
-        A[i + 1] = 1;
+        evensHeads++;
       }
-      keepFirstCount++;
     }
-    // tails first combination
-    if (T[i] !== T[i + 1]) {
-      break;
-    } else {
-      // if coin is tails, make next coin heads. otherwise make next coin tails
-      if (T[i] > 0) {
-        T[i] = 0;
+    if (i % 2 === 1) {
+      if (A[i] === 1) {
+        oddsHeads++;
       } else {
-        T[i] = 1;
+        evensHeads++;
       }
-      changeFirstCount++;
     }
   }
-  console.log(keepFirstCount, changeFirstCount);
+  // return minimum of two counts
+  return Math.min(oddsHeads, evensHeads);
 }
-solution([1, 0, 1, 0, 1, 1]);
-solution([1, 1, 1, 0, 1, 1]);
+console.log(solution([1, 0, 1, 0, 1, 1]));
+console.log(solution([1, 1, 0, 1, 1]));
+console.log(solution([0, 1, 0]));
+console.log(solution([0, 1, 1, 0]));
 
 // change odds
 // change evens
