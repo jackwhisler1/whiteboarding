@@ -53,9 +53,9 @@ class Hand
   def total_value
     total = 0
     @cards.each do |card|
-    if card.name == :ace
-      card.value = 11
-    end
+      if card.name == :ace
+        card.value = 11
+      end
       total = total + card.value
     end
     return total

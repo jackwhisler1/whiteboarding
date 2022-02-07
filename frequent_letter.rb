@@ -16,6 +16,6 @@ def frequent_letter(str)
       letters[letter] = 1
     end 
   end
-  return letters.max_by { |k, v| v }[0]
+  return letters.max_by { |_k, v| v }[0]
 end
 p frequent_letter("peter piper picked peck")

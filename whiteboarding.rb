@@ -36,7 +36,7 @@ def biggest_product(arr)
     end    
   end
 
-    largest * second_largest
+  largest * second_largest
 end
 p biggest_product([1000, 3, -40, 80.3, 204, 204, 0.23])
 

@@ -9,6 +9,6 @@
 # reduce hash to sum
 
 def whole_menu(menu)
-  menu.reduce(0){|sum, (k, v)| sum + v}
+  menu.reduce(0){|sum, (_k, v)| sum + v}
 end
 p whole_menu({"hot dog" => 2, "hamburger" => 3, "steak sandwich" => 5, "fries" => 1, "cole slaw" => 1, "soda" => 2})
