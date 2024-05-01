@@ -7,7 +7,7 @@
 // set variable to be !capitalized so it alternates
 // loop through array
 // check if character is a letter, if so !capitalized
-// join array and return
+// join array and return text
 
 function alternateCapitals(str) {
   let capitalized = false;
