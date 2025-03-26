@@ -27,24 +27,21 @@
  * @return {Array<Array<string>>} Array of student identifier subarrays
  */
 function groupStudents(students) {
-   let studentsArr = Object.entries(students).sort((a, b) => a[1] - b[1]);
-   let result = [];
-   let remaining = [...studentsArr];
-
-   let i = 0;
-
-   while(i < remaining.length ){
-    let currentGroup = [remaining[i][0]];
-    let maxGroupScore = remaining[i][1] + 15;
+  const remainingStudents = Object.entries(students).sort((a, b) => a[1] - b[1]);
+  let result = [];
+  let i = 0;
+  while(i < remainingStudents.length){
+    let currentGroup =[remainingStudents[i][0]];
+    let maxGroupScore = remainingStudents[i][1] + 15;
     i++
-        while(remaining[i] && remaining[i][1] <= maxGroupScore){
-            currentGroup.push(remaining[i][0]);
-            i++
-        }
+    while(remainingStudents[i] && remainingStudents[i][1] <= maxGroupScore){
+      currentGroup.push(remainingStudents[i][0])
+      i++
+    }
     result.push(currentGroup);
-   }
-   return result;
   }
+  return result;
+}
   
   // Test cases
   function runTests() {
